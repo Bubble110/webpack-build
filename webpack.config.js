@@ -43,7 +43,24 @@ module.exports={
             // }
         }, 'less-loader'],
         exclude: /node_modules/
-      }
+      },
+      {
+        test:/\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
+        use:[
+          {
+            loader:'url-loader',
+            options:{
+              limit:10240,
+              esModule:false
+            }
+          }
+        ],
+        exclude: /node_modules/
+      },
+      // {
+      //   test:/\.html$/,
+      //   use:['html-withimg-loader']
+      // }
     ]
   },
   plugins:[
